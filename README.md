@@ -1,6 +1,8 @@
 # Materilio
 
-Materilio is a portfolio designed with material style for hugo.
+![Screenshot of example site](/static/materilio.png)
+
+Materilio is a WIP portfolio designed with material style for hugo.
 
 ## Libraries/Resources
 
