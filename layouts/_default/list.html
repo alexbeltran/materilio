@@ -2,7 +2,30 @@
 
 <div class="container">
     <div class="row">
-        {{ .Content }}
+    {{ range $p := .Page.Pages}}
+        <div class="col s6 m6">
+            <div class="card large">
+                {{ with $p.Params }}
+                    {{ if .thumbnail }}
+                    <div class="card-image">
+                        <img src="{{ .thumbnail | relURL }}">
+                    </div>
+                    {{ end }}
+                {{ end }}
+
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ $p.Title }}</span>
+                    <div>
+                    {{ $p.Summary }}
+                    </div>
+               </div>
+                <div class="card-action">
+                    <p><a href="{{ $p.URL }}" class="right">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+
+    {{ end }}
     </div>
 </div>
 

@@ -1,0 +1,14 @@
+
+{{ if len .Params | eq 2 }}
+    {{ $p := .Get 1}}
+    {{ $t := .Get 0}}
+    {{ $url := urls.Parse $p }}
+
+    {{ if eq $t "language" }}
+        <img src="https://img.shields.io/github/languages/top{{$url.Path}}.svg" \>
+    {{ else if eq $t "license" }}
+        <img src="https://img.shields.io/github/license{{$url.Path}}.svg" \>
+    {{ else if eq $t "release" }}
+        <a href="{{$url.String}}"><img src="https://img.shields.io/github/release{{$url.Path}}.svg" \></a>
+    {{ end }}
+{{ end }}
